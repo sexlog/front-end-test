@@ -36,7 +36,7 @@ As APIs a serem consumidas são:
 
 ### **Processo de submissão** ###
 
-O desafio deve ser entregue pelo [GitHub](http://github.com/). A aplicação deve estar hospedada ([Heroku](https://www.heroku.com/), [Firebase](https://www.firebase.com/), [Plunker](https://plnkr.co/), GitHub Pages, etc) As URLs devem ser enviadas por email.
+O desafio deve ser entregue pelo [GitHub](http://github.com/). A aplicação deve estar hospedada ([Heroku](https://www.heroku.com/), [Firebase](https://www.firebase.com/), [Plunker](https://plnkr.co/), [GitHub Pages](https://pages.github.com/), etc). As URLs devem ser enviadas por email.
 
 Qualquer dúvida em relação ao desafio, responderemos por e-mail.
 
