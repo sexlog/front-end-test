@@ -10,15 +10,13 @@ Desenvolver uma aplicação que consulte a API do GitHub e traga repositórios p
 
 **Requisitos**
 
-* Eu, como usuário, desejo buscar por um usuário do GitHub;
-* Eu, como usuário, desejo ver os detalhes desse usuário que foi buscado (número de seguidores, número de seguidos, imagem do avatar, e-mail e bio);
-* Eu, como usuário, desejo ver a listagem dos repositórios desse usuário que foi buscado, ordenados pelo número decrescente de estrelas;
-* Eu, como usuário, desejo poder alterar a ordem da listagem de repositórios;
-* Eu, como usuário, desejo ver uma página com os detalhes de um repositório (nome, descrição, número de estrelas, linguagem e um link externo para a página do repositório no GitHub), que pode ser clicado na listagem dos repositórios;
-
-**Sobre o desafio**
-
+* Buscar por um usuário do GitHub;
+* Ver os detalhes desse usuário que foi buscado (número de seguidores, número de seguidos, imagem do avatar, e-mail e bio);
+* Ver a listagem dos repositórios desse usuário que foi buscado, ordenados pelo número decrescente de estrelas;
+* Poder alterar a ordem da listagem de repositórios;
+* Ver uma página com os detalhes de um repositório (nome, descrição, número de estrelas, linguagem e um link externo para a página do repositório no GitHub), que pode ser clicado na listagem dos repositórios;
 * O layout deve ser responsivo a partir de 320 x 480;
+* O layout fica ao seu critério.
 * Não é obrigatório o uso de um framework/lib Javascript, mas recomendamos Angular, React ou Vue.
 * Não recomendamos o uso de frameworks CSS, como Bootstrap.
 * É obrigatório o uso de rotas.
