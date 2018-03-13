@@ -20,7 +20,7 @@ Desenvolver uma aplicação que consulte a API do GitHub e traga repositórios p
 
 * O layout deve ser responsivo a partir de 320 x 480;
 * Não é obrigatório o uso de um framework/lib Javascript, mas recomendamos Angular, React ou Vue.
-* Poderá ser usado framework CSS como Bootstrap, mas não recomendamos o uso.
+* Não recomendamos o uso de frameworks CSS, como Bootstrap.
 * É obrigatório o uso de rotas.
 
 **Critérios de Avaliação**
