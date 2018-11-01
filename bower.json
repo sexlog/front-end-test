@@ -1,26 +1,24 @@
 {
-  "name": "Consult Github API",
+  "name": "Consult API Github's",
+  "homepage": "https://github.com/DenisdS/front-end-test",
   "authors": [
-    "Denis <denis_santos1989@hotmail.com>"
+    "DenisdS <denis_santos1989@hotmail.com>"
   ],
-  "description": "Project developed using frameworks JavaScript (Angular; React)",
+  "description": "Project for consult API Rest Github's using Angular and React",
   "main": "index",
   "keywords": [
-    "angular"
+    "Angular;",
+    "React;",
+    "Node;",
+    "Bower"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/DenisdS/front-end-test",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components"
-  ],
-  "dependencies": {
-    "jquery": "",
-    "angular": "1.6",
-    "angular-route": "^1.6",
-	  "angular-sanitize": "1.6",
-	  "angular-resource": "^1.6",
-	  "angular-localstorage": ""
-  }
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
