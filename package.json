@@ -1,0 +1,34 @@
+{
+  "name": "front-end-test",
+  "version": "1.0.0",
+  "description": "Project Consult API Github's using Angular and React",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a localhost -p 9090",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisdS/front-end-test.git"
+  },
+  "keywords": [
+    "Angular;",
+    "React;",
+    "Node;"
+  ],
+  "author": "DenisdS <denis_santos1989@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DenisdS/front-end-test/issues"
+  },
+  "homepage": "https://github.com/DenisdS/front-end-test#readme",
+  "dependencies": {
+    "jquery": "",	 
+    "angular": "1.6",	
+    "angular-route": "^1.6",	
+	  "angular-sanitize": "1.6",	
+	  "angular-resource": "^1.6",	
+    "angular-localstorage": "",
+    "http-server": ""
+  }
+}
