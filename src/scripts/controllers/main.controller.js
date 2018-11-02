@@ -5,6 +5,9 @@ angular.module('app')
 			var self = username;
 			var url = "https://api.github.com/users/" + self + "/repos";
 			var checkRepos = 0;
+			var checkfollowers = 0;
+
+			var followers_github = "https://api.github.com/users/" + self;
 		
 			$http.get(url)
 				.then(
@@ -18,9 +21,16 @@ angular.module('app')
 						}
 					},
 					function(err){
-						$scope.incorrectUsername = 'Username não encontrado!';
+						$scope.incorrectReturn = 'Username não encontrado!';
 						$('ul').hide();
 						$('.errorSearch').show();
+					}
+				);
+
+				$http.get(followers_github)
+				.then(
+					function(response){
+						$scope.followers = response.data.followers;
 					}
 				);
 		}
