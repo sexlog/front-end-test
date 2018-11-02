@@ -3,9 +3,9 @@ angular.module('app')
         
 		$scope.searchRepo = function(username){
 			var self = username;
-			var url = "https://api.github.com/users/" + self + "/repos";
+			var url = "https://api.github.com/users/" + self + "/repos?client_id=699079e80657c92a8f2a&client_secret=11b16c7bcf4ac50abc5635cebcb1675f011917bb";
 			var checkRepos = 0;
-			var detailsUserGithub = "https://api.github.com/users/" + self;
+			var detailsUserGithub = "https://api.github.com/users/" + self + "?client_id=699079e80657c92a8f2a&client_secret=11b16c7bcf4ac50abc5635cebcb1675f011917bb";
 
 			$http.get(url)
 				.then(
@@ -45,5 +45,21 @@ angular.module('app')
 						$scope.bio = response.data.bio;
 					}
 				);
+
+				$http.get(detailsUserGithub)
+				.then(
+					function(response){
+						$scope.email = response.data.email;
+					}
+				);
+
+				$http.get(detailsUserGithub)
+				.then(
+					function(response){
+						$scope.avatar_url = response.data.avatar_url;
+					}
+				);
+
+				
 		}
     }]);
