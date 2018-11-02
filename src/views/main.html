@@ -4,8 +4,8 @@
 	<input type="submit" ng-click="searchRepo(username)" value="Buscar">
 </form>
 
-<ul ng-repeat="name in repos">
-	<li ng-bind="name.name"></li>
+<ul>
+	<li ng-repeat="name in repos" ng-bind="name.name"></li>
 </ul>
 
 <p ng-bind-html="incorrectUsername" class="errorSearch"></p>
