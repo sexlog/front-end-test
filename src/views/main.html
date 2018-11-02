@@ -10,18 +10,10 @@
 
 <ul>
 	<li ng-bind="followers"></li>
-</ul>
-
-<ul>
 	<li ng-bind="following"></li>
-</ul>
-
-<ul>
-	<li ng-bind="bio"></li>
-</ul>
-
-<ul>
 	<li><img ng-src="{{avatar_url}}"></li>
+	<li ng-bind="email"></li>
+	<li ng-bind="bio"></li>
 </ul>
 
 <p ng-bind-html="incorrectUsername" class="errorSearch"></p>

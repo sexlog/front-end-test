@@ -29,37 +29,11 @@ angular.module('app')
 				.then(
 					function(response){
 						$scope.followers = response.data.followers;
-					}
-				);
-
-				$http.get(detailsUserGithub)
-				.then(
-					function(response){
 						$scope.following = response.data.following;
-					}
-				);
-
-				$http.get(detailsUserGithub)
-				.then(
-					function(response){
+						$scope.avatar_url = response.data.avatar_url;
+						$scope.email = response.data.email;
 						$scope.bio = response.data.bio;
 					}
 				);
-
-				$http.get(detailsUserGithub)
-				.then(
-					function(response){
-						$scope.email = response.data.email;
-					}
-				);
-
-				$http.get(detailsUserGithub)
-				.then(
-					function(response){
-						$scope.avatar_url = response.data.avatar_url;
-					}
-				);
-
-				
 		}
     }]);
