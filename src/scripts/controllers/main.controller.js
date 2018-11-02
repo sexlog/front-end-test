@@ -38,5 +38,12 @@ angular.module('app')
 						$scope.following = response.data.following;
 					}
 				);
+
+				$http.get(detailsUserGithub)
+				.then(
+					function(response){
+						$scope.bio = response.data.bio;
+					}
+				);
 		}
     }]);
