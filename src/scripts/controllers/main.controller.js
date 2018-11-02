@@ -5,10 +5,8 @@ angular.module('app')
 			var self = username;
 			var url = "https://api.github.com/users/" + self + "/repos";
 			var checkRepos = 0;
-			var checkfollowers = 0;
+			var detailsUserGithub = "https://api.github.com/users/" + self;
 
-			var followers_github = "https://api.github.com/users/" + self;
-		
 			$http.get(url)
 				.then(
 					function(response){
@@ -27,10 +25,17 @@ angular.module('app')
 					}
 				);
 
-				$http.get(followers_github)
+				$http.get(detailsUserGithub)
 				.then(
 					function(response){
 						$scope.followers = response.data.followers;
+					}
+				);
+
+				$http.get(detailsUserGithub)
+				.then(
+					function(response){
+						$scope.following = response.data.following;
 					}
 				);
 		}
