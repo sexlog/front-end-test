@@ -6,13 +6,12 @@ html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
     display: grid;
     grid-template-columns: 0 3fr;
     grid-column-gap: 50px;
-    grid-template-rows: 30px 70px 100px;
+    grid-template-rows: 84px;
 }
 
 header{
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 1;
 }
 
 header h1 a{
@@ -20,11 +19,11 @@ header h1 a{
 }
 
 .mainBox{
-    grid-template-columns: 0 3fr;
+    grid-template-columns: 0 3fr 3fr;
     grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-end: 2;
+    grid-template-rows: 100px;
     display: grid;
-    grid-row-start: 3;
 }
 
 .formSearchUser{
@@ -36,30 +35,45 @@ header h1 a{
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 4;
+    grid-column-end: 2;
+    grid-column-gap: 32px;
+    border-top: 2px #214478 solid;
+    border-bottom: 2px #214478 solid;
+    border-radius: 15px;
 }
 
 .userBox img{
-    width: 230px;
-    height: 230px;
+    width: 180px;
+    height: 180px;
     grid-column-start: 1;
     grid-column-end: 1;
+    border-radius: 5px;
 }
 
 .userDetails{
     display: inline-grid;
-    grid-template-columns: 0.2fr 0.2fr;
+    grid-template-columns: 1fr 1fr;
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+    border-right: 2px #214478 solid;
+    border-bottom: 4px #214478 solid;
+    border-left: 2px #214478 solid;
+}
+
+.emailContact{
+    grid-column-start: 1;
 }
 
 .repoBox{
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-column-end: 3;
-    grid-row-start: 5;
+    grid-row-start: 1;
 }
 
+li span{
+    font-weight: bold;
+}
 
 label{
     font-weight: bold;
@@ -82,4 +96,9 @@ form input[type="submit"] {
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+.bioUser{
+    grid-row-start: 2;
+    grid-column-start: 2;
 }
