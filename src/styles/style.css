@@ -43,6 +43,8 @@ header{
 }
 
 .userDetails{
+    display: inline-grid;
+    grid-template-columns: 0.2fr 0.2fr;
     grid-column-start: 2;
     grid-column-end: 3;
     background: gray;
