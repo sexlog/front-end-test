@@ -9,7 +9,7 @@ header h1 a{
     color: #DF0101;
 }
 
-h2{font-size: 18px;}
+h2{font-size: 24px;}
 
 h3{font-size: 16px;}
 
@@ -30,7 +30,7 @@ label{font-weight: bold;}
 
 /*Style elements form*/
 form input[type="submit"] {
-    width: 97px;
+    width: 80px;
     height: 42px;
     background: #214478;
     font: 18px Helvetica;
@@ -54,9 +54,8 @@ form input[type="text"] {
 @media (max-width: 600px) {
     .container{
         display: grid;
-        grid-template-columns: 0 1fr;
-        grid-column-gap: 1%;
-        background: red;
+        grid-template-columns: 0 1fr 0;
+        grid-column-gap: 2%;
     }
 
     header{
@@ -66,24 +65,75 @@ form input[type="text"] {
     .mainBox{
         grid-template-columns: 0 1fr;
         grid-column-start: 2;
-        background: green;
         display: grid;
     }
 
     .formSearchUser{
         grid-column-start: 2;
+        grid-row-start: 1;
     }
 
     .userBox{
         display: grid;
         grid-template-columns: 0.7fr 1fr;
         grid-column-start: 2;
-        border-top: 2px #214478 solid;
+        grid-row-start: 2;
+        border-bottom: 2px #214478 solid;
         border-radius: 15px;
+    }
+
+    .userBox h2{
+        grid-row-start: 1;
+    }
+
+    .userDetails{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        border-right: 2px #214478 solid;
+        border-bottom: 4px #214478 solid;
+        border-left: 2px #214478 solid;
     }
 
     .userBox img{
         grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .userDetails li{
+        grid-column-start: 1;
+    }
+
+    .bioUser{
+        grid-column-start: 1;
+        line-height: 20px;
+    }
+
+    .repoBox{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    
+    .repoBox li{
+        background: #A9E2F3;
+        border-radius: 7px;
+        justify-items: center;
+        display: grid;
+    }
+
+    p{
+        padding-left: 10px;
+    }
+
+    .emailContact{
+        grid-row-start: 4;
     }
 }
 
