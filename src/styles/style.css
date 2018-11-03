@@ -1,4 +1,4 @@
-html, body{width: 100%; margin: 0 auto;}
+html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
 
 *{text-decoration: none; list-style: none; border: none;}
 
@@ -6,12 +6,17 @@ html, body{width: 100%; margin: 0 auto;}
     display: grid;
     grid-template-columns: 0 3fr;
     grid-column-gap: 50px;
-    background: red;
+    grid-template-rows: 30px 70px 100px;
 }
 
 header{
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+}
+
+header h1 a{
+    color: #DF0101;
 }
 
 .mainBox{
@@ -19,7 +24,7 @@ header{
     grid-column-start: 2;
     grid-column-end: 3;
     display: grid;
-    background: gray;
+    grid-row-start: 3;
 }
 
 .formSearchUser{
@@ -32,7 +37,7 @@ header{
     grid-template-columns: 1fr 3fr;
     grid-column-start: 2;
     grid-column-end: 3;
-    background: yellow;
+    grid-row-start: 4;
 }
 
 .userBox img{
@@ -47,11 +52,34 @@ header{
     grid-template-columns: 0.2fr 0.2fr;
     grid-column-start: 2;
     grid-column-end: 3;
-    background: gray;
 }
 
 .repoBox{
     grid-column-start: 2;
     grid-column-end: 3;
-    background: green;
+    grid-row-start: 5;
+}
+
+
+label{
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: 250px;
+    height: 35px;
+    background: #e6eff8;
+    border-bottom: 2px #214478 solid;
+    border-left: 2px #214478 solid;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    width: 97px;
+    height: 42px;
+    background: #214478;
+    font: 18px Helvetica;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }
