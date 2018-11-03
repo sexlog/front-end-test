@@ -3,7 +3,7 @@ angular.module('app')
         
 		$scope.searchRepo = function(username){
 			var self = username;
-			var url = "https://api.github.com/users/" + self + "/repos" + "?client_id=699079e80657c92a8f2a&client_secret=11b16c7bcf4ac50abc5635cebcb1675f011917bb";
+			var url = "https://api.github.com/users/" + self + "/repos?page=1&per_page=6" + "?client_id=699079e80657c92a8f2a&client_secret=11b16c7bcf4ac50abc5635cebcb1675f011917bb";
 			var checkRepos = 0;
 			var detailsUserGithub = "https://api.github.com/users/" + self + "?client_id=699079e80657c92a8f2a&client_secret=11b16c7bcf4ac50abc5635cebcb1675f011917bb";
 
@@ -27,6 +27,10 @@ angular.module('app')
 					function(response){
 						$scope.repos = response.data;
 						checkRepos = $scope.repos.length;
+
+						for(var i = 0; i < checkRepos; i++){
+							console.log(i);
+						}
 						
 						if(checkRepos > 0){
 							$('.errorSearch').hide();

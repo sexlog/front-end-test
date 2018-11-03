@@ -1,93 +1,34 @@
+/*Global style*/
 html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
 
 *{text-decoration: none; list-style: none; border: none;}
+/*End global style*/
 
-.container{
-    display: grid;
-    grid-template-columns: 0 3fr;
-    grid-column-gap: 50px;
-    grid-template-rows: 84px;
-}
-
-header{
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
+/*Style text*/
 header h1 a{
     color: #DF0101;
 }
 
-.mainBox{
-    grid-template-columns: 0 3fr 3fr;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-template-rows: 100px;
-    display: grid;
-}
+h2{font-size: 18px;}
 
-.formSearchUser{
-    grid-column-start: 2;
-    grid-column-end: 2;
-}
+h3{font-size: 16px;}
 
-.userBox{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-column-gap: 32px;
-    border-top: 2px #214478 solid;
-    border-bottom: 2px #214478 solid;
-    border-radius: 15px;
-}
+h4, p{font-size: 14px;}
+
+li span{font-weight: bold;}
+
+label{font-weight: bold;}
+
+.languageRepo{font-weight: bold;}
+/*End style text*/
 
 .userBox img{
     width: 180px;
     height: 180px;
-    grid-column-start: 1;
-    grid-column-end: 1;
     border-radius: 5px;
 }
 
-.userDetails{
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    border-right: 2px #214478 solid;
-    border-bottom: 4px #214478 solid;
-    border-left: 2px #214478 solid;
-}
-
-.emailContact{
-    grid-column-start: 1;
-}
-
-.repoBox{
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 1;
-}
-
-li span{
-    font-weight: bold;
-}
-
-label{
-    font-weight: bold;
-}
-
-form input[type="text"] {
-    width: 250px;
-    height: 35px;
-    background: #e6eff8;
-    border-bottom: 2px #214478 solid;
-    border-left: 2px #214478 solid;
-    border-radius: 5px;
-}
-
+/*Style elements form*/
 form input[type="submit"] {
     width: 97px;
     height: 42px;
@@ -98,12 +39,132 @@ form input[type="submit"] {
     border-radius: 5px;
 }
 
-.bioUser{
-    grid-row-start: 2;
-    grid-column-start: 2;
-    line-height: 20px;
+form input[type="text"] {
+    width: 230px;
+    height: 35px;
+    background: #e6eff8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    border-bottom: 2px #214478 solid;
+    border-left: 2px #214478 solid;
+    border-radius: 5px;
+}
+/*End style elements form*/
+
+@media (max-width: 600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0 1fr;
+        grid-column-gap: 1%;
+        background: red;
+    }
+
+    header{
+        grid-column-start: 2;
+    }
+
+    .mainBox{
+        grid-template-columns: 0 1fr;
+        grid-column-start: 2;
+        background: green;
+        display: grid;
+    }
+
+    .formSearchUser{
+        grid-column-start: 2;
+    }
+
+    .userBox{
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        grid-column-start: 2;
+        border-top: 2px #214478 solid;
+        border-radius: 15px;
+    }
+
+    .userBox img{
+        grid-column-start: 1;
+    }
 }
 
-h2{
-    font-size: 18px;
+@media (min-width: 1000px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0 3fr;
+        grid-column-gap: 50px;
+        grid-template-rows: 84px;
+    }
+    
+    header{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+    .mainBox{
+        grid-template-columns: 0 3fr 3fr;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-template-rows: 100px;
+        display: grid;
+    }
+    
+    .formSearchUser{
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+    
+    .userBox{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-column-gap: 32px;
+        grid-row-start: 2;
+        grid-template-rows: 64px 184px;
+        border-top: 2px #214478 solid;
+        border-radius: 15px;
+    }
+    
+    .userBox img{
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    
+    .userDetails{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        border-right: 2px #214478 solid;
+        border-bottom: 4px #214478 solid;
+        border-left: 2px #214478 solid;
+    }
+    
+    .emailContact{
+        grid-column-start: 1;
+    }
+    
+    .repoBox{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    
+    .repoBox li{
+        background: #A9E2F3;
+        border-radius: 7px;
+        justify-items: center;
+        display: grid;
+    }
+    
+    .bioUser{
+        grid-row-start: 2;
+        grid-column-start: 2;
+        line-height: 20px;
+    }
 }
