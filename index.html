@@ -8,10 +8,12 @@
         <script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
 
+		<link rel="stylesheet" href="src/styles/style.css">
+
         <title>Combate de Fronts</title>
     </head>
 	
-    <body>
+    <body class="container">
 		<header>
 			<h1>
 				<a href="index.html">
@@ -20,10 +22,7 @@
 			</h1>
 		</header>
 	
-		<div id="container">
-			<div  ng-app="app">
-				<div ng-view=""></div>
-			</div>
+		<div ng-app="app" ng-view="" class="mainBox">
 		</div>
 		
         <script src="src/scripts/app.js"></script>

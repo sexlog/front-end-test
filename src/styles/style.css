@@ -1,0 +1,40 @@
+html, body{width: 100%; margin: 0 auto;}
+
+*{text-decoration: none; list-style: none;}
+
+.container{
+    display: grid;
+    grid-template-columns: 0 2fr 3fr;
+    grid-column-gap: 50px;
+    background: red;
+}
+
+header{
+    grid-column-start: 2;
+    grid-column-end: 5;
+}
+
+.mainBox{
+    grid-template-columns: 0 2fr 3fr;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: grid;
+    background: gray;
+}
+
+.formSearchUser{
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.detailsUser{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    background: yellow;
+}
+
+.detailsRepo{
+    grid-column-start: 3;
+    grid-column-end: 3;
+    background: green;
+}

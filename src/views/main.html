@@ -1,19 +1,25 @@
-<form>
+<form class="formSearchUser">
 	<label for="busca">Buscar Username do Github</label><br>
 	<input type="text" id="busca" ng-model="username">
 	<input type="submit" ng-click="searchRepo(username)" value="Buscar">
 </form>
 
-<ul>
-	<li ng-repeat="name in repos" ng-bind="name.name"></li>
-</ul>
-
-<ul>
+<ul class="detailsUser">
 	<li ng-bind="followers"></li>
 	<li ng-bind="following"></li>
 	<li><img ng-src="{{avatar_url}}"></li>
 	<li ng-bind="email"></li>
 	<li ng-bind="bio"></li>
+</ul>
+
+<ul class="detailsRepo">
+	<li ng-repeat="name in repos">
+		<p>{{name.name}}</p>
+		<p>{{name.description}}</p>
+		<p>{{name.stargazers_count}}</p>
+		<p>{{name.language}}</p>
+		<a ng-href="{{name.html_url}}" ng-click="showDetailsRepo">{{name.name}}</a>
+	</li>
 </ul>
 
 <p ng-bind-html="incorrectUsername" class="errorSearch"></p>

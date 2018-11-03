@@ -1,0 +1,174 @@
+Para trabalhar com grid layout deve ser adotado uma div container,
+como já fazemos habitualmente.
+
+Em grid layouts pode ser utilizado medidas fixas ou flexíveis(fluídas), fixas são aplicados px,
+flexíveis são utilizados fr.
+
+.container{
+	display: grid | inline-grid | subgrid
+}(São as declarações aceitas para o container grid, autoexplicativas)
+Obs: Não são aceitos column, float, clear e vertical-align em aplicações com
+grid container.
+
+grid-template-columns: declaração para as colunas do layout, posicionamento,
+tamanho.
+
+grid-template-rowns: declaração para as linhas do layout, posicionamento,
+espessura.
+
+Exemplo:
+.container {
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto;
+}
+
+.container {
+  grid-template-columns: 1fr 1fr 1fr;
+}(fr é própio do grid layout, para estruturas responsivas)
+
+.container {
+  grid-template: none | subgrid | <grid-template-rows> / <grid-template-columns>;
+}
+
+.container {
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px; 
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}(gap é o espaçamento)
+
+.container {
+  justify-items: start | end | center | stretch;
+}(Alinhas os itens em relação as colunas)
+Obs: start alinha a esquerda, end a direita, stretch preenche tudo.
+
+.container {
+  justify-content: start | end | center | stretch | space-around | space-between | space-evenly;	
+}(Posiciona o container todo, útil quando tudo deve ser menor que a tela em 
+uso). (Alinha em relação as colunas)
+
+.container {
+  align-content: start | end | center | stretch | space-around | space-between | space-evenly;	
+}(Alinha em relação as linhas)
+
+.box {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-column-end: 4;
+    grid-row-end: 4;
+  }(start indica onde começara o grid, end onde terminará)
+.box {
+    grid-column: 1/4; /* grid-column-start / grid-column-end */
+    grid-row: 2/4; /* grid-row-start / grid-row-end */
+  }
+.box {
+    grid-area: 1 / 2 /4 / 4; /* grid-column-start / grid-row-start / grid-column-end / grid-row-end */
+  }
+
+.container-box {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: 50px 330px 50px;
+  grid-template-areas:
+    'header header header'
+    'aside main main'
+    'footer footer footer'
+  ;
+}(usando area e as nomeando)
+
+
+Propriedades para os elementos filhos do grid container
+
+grid-column-start
+grid-columun-end
+grid-row-start
+grid-row-end
+Exemplo:
+.item-a {
+  grid-column-start: 2;  (Inicia na coluna dois do layout)
+  grid-column-end: five; (Termina na coluna cinco do layout)
+  grid-row-start: row1-start (Item inicia na linha 1 do layout)
+  grid-row-end: 3 (Item termina na linha 3 do layout)
+}
+.item-a {
+  justify-self: start;
+}(Alinha a coluna apenas do próprio item em relação ao container)
+.item-a {
+  align-self: end;
+}(Alinha a linha apenas do próprio item em relação ao container)
+
+O z-index funciona em sobreposições de elementos do layout.
+*grid inspector ferramenta de desenvolvimento do firefox justamente para facilitar o trabalho com grids
+
+*Referências
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://imasters.com.br/perfil/simoneamorim/?trace=3182418120&source=single
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+https://johnylab.net/blog/css/como-funciona-a-funcao-minmax-do-css-grid-layout.html
+
+.messages #subwall-inbox-preview.subwall-integrated-interests-pt-br {
+    background: url(/~ImageRoot~//connections//subwall-inbox-items-rethink-pt.png) no-repeat;
+    height: 595px;
+}
+
+.messages #subwall-inbox-preview.subwall-integrated-interests-es-ar {
+    background: url(/~ImageRoot~//connections/subwall-inbox-items-rethink-es.png) no-repeat;
+    height: 595px;
+}
+
+.messages #subwall-inbox-preview.subwall-integrated-interests-es-mx {
+    background: url(/~ImageRoot~//connections/subwall-inbox-items-rethink-es.png) no-repeat;
+    height: 595px;
+}   
+
+É possível abreviar declarações usando repeat:
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+é o mesmo que:
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+Outro exemplo:
+.wrapper {
+  display: grid;
+  grid-template-columns: 20px repeat(6, 1fr) 20px;
+}
+
+Os tamanho também podem ser automáticos, tendo um min
+Exemplo:
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+}
+.grid {
+    display: grid;
+    grid-template-columns: minmax(100px, 200px) 1fr 1fr;
+}
+.grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 50%) 1fr 1fr;
+}
+
+
+Principal definição: tradução literal: Grid layout é um novo modelo de construir interfaces por CSS que tem a habilidade de controlar
+o tamanho e posicionamento de boxes e elementos correspondentes a eles. Diferentemente de Flexbox que é unidimensional, o grid layout
+é bidimensional, pois controla colunas e linhas, já o flexbox se concentra apenas em linhas. (https://www.w3.org/TR/css-grid-1/)
+
+O grid layout muda drasticamente a maneira de desenvolver layouts, o melhor de tudo é que faz isso gerando um código limpo e semântico,
+pois no html não interefere em nada, no sentido de criar novas classes, ao contrário, dispensa o uso excessivo de marcações, já no lado
+do CSS o torna independente sem a necessidade de frameworks exclusivo para posicionamento e responsividade (vide bootstrap), tornando
+assim projetos mais leves e semânticos, pois o seu código css é limpo e de alto poder semântico.
+
+É uma boa forma de otimizar o desenvolvimento de interfaces responsivas unindo o css grid a aplicação de media queries, juntos podem
+tornar códigos de fácil compreensão e com poucas linhas de código.
+
+
+

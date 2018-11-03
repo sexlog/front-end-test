@@ -1,0 +1,545 @@
+Regras com maior peso têm preferência sobre regras
+de menor peso e por isso “ganharão” e entrarão em ação quando o navegador
+renderiza os estilos.
+
+Toda regra CSS tem sua especificidade implícita; portanto, mesmo não
+sabendo, você já se vale da especificidade! A ideia é que, a partir de agora,
+você faça isso conscientemente.
+
+Existem 4 categorias que definem o nível de especificidade a um dado seletor.
+Preste atenção na ordem, pois é importante. Para facilitar as explicações,
+vamos atribuir letras a cada uma:
+a) Estilos inline;
+b) IDs;
+c) Classes, pseudoclasses e atributos;
+d) Elementos e pseudoelementos.
+
+
+
+calculadora de especifidade css:
+http://specificity.keegan.st/
+
+Um seletor como:
+#content .intro { }
+O navegador procurará todas as instâncias de .intro e, depois, começar
+a subir no DOM até encontrar o elemento #content.
+No entanto, o seguinte seletor não é muito performático:
+
+
+seletores de ID em CSS, após se fazer alguns testes com performance em folhas
+de estilo.
+Porém, existem alguns pontos que merecem ser levados em consideração:
+• Performance;
+• Fragmentação;
+• Tradição.
+
+
+Pergunte para qualquer codificador CSS e ele responderá que os seletores
+de ID são os mais rápidos. Entretanto, isso vem com uma grande limitação:
+IDs são os seletores mais rápidos somente se forem os seletores-chave.
+Para um seletor #home a, chega a ser até normal supor que o browser
+vai localizar o elemento de ID home e aplicar os valores das propriedades em
+todos seus links. Rapidíssimo, não é? Agora, veja o que realmente acontece:
+ele pega todos os elementos a e verifica se são descendentes imediatos de
+#home. Caso não seja, vai checando os ascendentes até chegar a <html>.
+Será que a diferença de performance é tão grande mesmo? Para ter certeza,
+foram feitos 3 testes usando o Criador de Testes CSS de Steve Souders
+(http://goo.gl/DwfTuC) . Cada um deles utilizou 1000 elementos que foram
+selecionados a partir de IDs individuais, classes ou IDs comos seletores a. As
+páginas foram recarregadas diversas vezes para pegar a média dos resultados
+(números em ms).
+
+
+
+
+
+
+CSS Orientado a objetos:
+
+CSS orientado a objetos é
+uma metáfora para indicar que é possível escrever um CSS mais eficiente,
+sem repetições, que enseje a projetos mais profissionais. No caso do que é
+mostrado neste capítulo, é considerado por alguns até como framework.
+
+Princípios básicos de CSS orientado a objetos
+Dentro da proposta de OOCSS, existem dois princípios mais importantes:
+• Separar estrutura e skin;
+• Separar contêiner e conteúdo.
+
+Separar estrutura e skin significa repetir características visuais como
+“skins” separadas, que podem ser combinadas em vários “objetos” para
+conseguir-se uma extensa gama de variações visuais sem muito código. Por
+exemplo, backgrounds e estilos de borda.
+
+Em vez de estilizar um título secundário específico com .myObject h2
+{ }, crie e aplique uma classe que descreva o elemento em questão, como
+<h2 class="category-title">. Isso garante que:
+
+
+O que é “objeto” em OOCSS?
+Continuando com a metáfora de Orientação a Objetos (OO), um objeto
+em CSS é análogo a uma instância de uma classe Java ou PHP, por exemplo.
+Um objeto CSS é formado por 4 elementos:
+• HTML, que pode ser 1 ou mais nós do DOM;
+• Declarações CSS, que estilizam estes nós, começando com o nome da
+classe referente ao wrapper;
+• Componentes como imagens de background e sprites, por exemplo;
+• Comportamentos JavaScript, listeners ou métodos associados.
+
+
+Renderização de páginas web
+http://desenvolvimentoparaweb.com/miscelanea/desenvolvedor-frontend-renderizacao-paginas-web/
+
+
+
+Media
+Oobjeto Media permite que você tenha uma imagem (ou flash) ou outro
+tipo de mídia com tamanho fixo à esquerda ou direita com algum conteúdo
+que a descreva no centro.
+Classes:
+• .media: wrapper do objeto Media;
+• .img: nó-filho do objetoMedia, sendo geralmente um link ou imagem,
+aparecendo à esquerda do nó .bd (opcionalmente consta no objeto);
+• .bd: área principal de conteúdo do objeto Media, pode conter quaisquer
+outros objetos (obrigatório constar no objeto);
+• .imgExt: nó-filho do objetoMedia, sendo geralmenteumlink ou imagem,
+aparecendo à direita do nó .bd (opcionalmente consta no objeto).
+
+Princípios básicos de CSS orientado a objetos
+Dentro da proposta de OOCSS, existem dois princípios mais importantes:
+• Separar estrutura e skin;
+• Separar contêiner e conteúdo.
+Separar estrutura e skin significa repetir características visuais como
+“skins” separadas, que podem ser combinadas em vários “objetos” para
+conseguir-se uma extensa gama de variações visuais sem muito código. Por
+exemplo, backgrounds e estilos de borda.
+
+Em 2011, 2 anos depois do surgimento de OOCSS,
+surgia a SMACSS.
+SMACSS (pronuncia-se “smacks”) significa Scalable and Modular Architecture
+for CSS (ou Arquitetura Escalável e Modular para CSS). Ela está mais
+para uma normatização, como foi dito, do que para uma “invenção CSS”. Foi
+algo que surgiu em virtude da análise do trabalho do próprio Snook e de colegas
+ao observar as melhores práticas para estruturar código CSS
+
+
+Veja alguns exemplos:
+/* Módulo "Example" */
+.example { }
+/* Módulo "Callout" */
+.callout { }
+/* Módulo "Callout" com Estado */
+.callout.is-collapsed { }
+/* Módulo de campo de formulário */
+.field { }
+/* Layout "Inline" */
+.l-inline { }
+
+
+
+Base
+Regras Base são aplicadas a elementos usando seletor de elemento, de seletordescendente
+ou de seletor-filho, além de pseudoclasses. Não estão inclusos
+seletores de ID e classes.
+Servem para definir como é a aparência padrão de determinados elementos
+todas as vezes em que estes aparecem nas páginas do projeto. Incluem
+especificações de tamanhos de títulos, aparência padrão de links, estilos de
+fontes, backgrounds gerais etc. Geralmente, não há necessidade de se usar
+!important em estilos Base.
+Exemplo:
+
+body,
+form {
+margin: 0;
+padding: 0;
+}
+input[type="text"] {
+border: 1px solid #999;
+}
+a {
+color: #039;
+}
+a:hover {
+color: #03c;
+}
+
+
+Layout
+Layout pode ser entendido demuitasmaneiras diferentes, dependendo de seu
+contexto e da área de atuação em que a palavra é usada. No caso de SMACSS,é preciso diferenciar entre os componentes maiores e menores que formam
+uma página, sendo aqueles as regras Layout e, estes,Módulos, que serão vistos
+logo em seguida.
+Para facilitar o entendimento, relembre da explicação dada anteriormente:
+layouts podem conter 1 ou mais módulos. Eles também podem ser
+divididos entre “maiores” e “menores” (bemmenos comuns), baseando-se na
+sua frequência de reúso nas páginas de um projeto.
+Apesar daquele princípio de que não se deve usar IDs como seletores CSS
+(2.3), em SMACSS não é tão incomum seu uso para designar layoutsmaiores,
+como headers, footers etc. Contudo, não há nenhum tipo de problema em
+continuar não usando IDs como seletores CSS.
+
+Exemplo de regras de Layout:
+#header,
+#article,
+#footer {
+margin: auto;
+width: 960px;
+}
+#article {
+border: solid #ccc;
+border-width: 1px 0 0;
+}
+
+
+Módulo
+Como já citado brevemente, regrasMódulo são o cerne de sua aplicação, comumente
+o quemais se trabalha em projetos que utilizamSMACSS. São com-ponentes mais específicos, como barras de navegação, widgets e assim por
+diante.
+Módulos se encontrarão dentro de layouts quase sempre. Também é possível
+que eles sejamusados dentro de outrosmódulos, o que, na verdade, é até
+comum de acontecer. Porém, tenha sempre em mente que, ao ser criado, seu
+objetivo é conseguir funcionar como um componente isolado (standalone).
+Idealmente, deve ser possível usar quantosmódulos forem necessários em
+uma página, ou até mesmo trocar um de lugar ou, mesmo, de uma página
+para outra sem que seja preciso realizar nenhum ajuste. Em função disto,
+para eles é estritamente proibido usar IDs e/ou seletores de elementos!
+
+
+
+Estado
+Em SMACSS, Estado é algo que serve para incrementar/ sobrescrever outros
+estilos, geralmente (e por convenção) com classes prefixadas com is-. Por
+exemplo, um menu ou seção com a aparência accordion pode estar no estado
+aberto ou fechado; uma mensagem do sistema pode estar em um estado de
+sucesso ou erro.
+Geralmente, estados são aplicados ao mesmo elemento como uma regra
+de layout ou módulo. Por exemplo:
+<div id="header" class="is-collapsed">
+<form>
+<div class="msg is-error">Mensagem de erro!</div>
+<label for="searchbox" class="is-hidden">Buscar</label>
+<input type="search" id="searchbox">
+</form>
+</div>
+Outro ponto importante ao qual ficar atento é que geralmente estados
+possuem vínculo com JavaScript (JS). Afinal, como se trata de um elemento
+que possui estados diferentes, é preciso alternar entre estes de algumamaneira
+quando algum trigger é acionado. Na atual tecnologia web disponível, isso é
+feito via JS.
+
+
+
+Tema
+O significado de Tema em SMACSS é o mesmo que em qualquer outro site
+que não a utiliza: um conjunto diferenciado de cores, imagens e elementos de
+UI que caracterizam o look & feel das páginas de um site.
+
+Atente ao fato de que, caso opte por usar classes específicas de tema, existe
+a convenção de se usar o prefixo theme-.
+Na prática, o que acontece é o arquivo de um tema sobrescrever as regras
+já estipuladas em quaisquer das outras categorias SMACSS para que a
+estilização necessária seja feita. Veja um exemplo de um tema alterando uma
+característica de um módulo.
+
+
+
+.bold {
+font-weight: bold !important ;
+}
+.italic {
+font-style: italic !important ;
+}
+.uppercase {
+text-transform: uppercase !important ;
+}
+.font-size-extra {
+font-size: 150% !important ;
+}
+[...]
+Note a presença de !important em cada uma dessas regras. Neste
+exemplo, o motivo da existência dessas classes é que elas serão usadas em
+momentos em que suas respectivas estilizações se fizerem necessárias, sem
+que ocorram repetições desnecessárias. É bem mais rápido, prático e performático
+
+
+
+
+BEM
+Você já ouviu falar no Yandex? Se você é russo, a probabilidade é bemmaior;
+se não é, saiba que se trata do buscador com maior market share da terra de
+Putin (60%). Ele também é um dos mais usados buscadores do mundo, contando
+com centenas de milhões de buscas por dia.
+AYandex também oferece outros serviços, contando comumecossistema
+web bastante significativo. Quando começou a crescer e sentir a necessidade
+de aprimorar emanter o front-end desse sistema, surgiu BEM(acrônimo para
+Block, Element, Modifier ou Bloco, Elemento,Modificador).
+Na verdade, BEM é uma metodologia completa; um verdadeiro framework
+
+
+Emse tratando de BEM, seu uso vemnamudança de como se enxergamas
+estruturas/módulos que se está desenvolvendo e, obviamente, conhecer suas
+convenções de nomenclatura.
+Em termos simples, temos:
+• Bloco: entidade independente com seu próprio significado; é a abstração
+mais geral de um componente/módulo;
+• Elemento: descendente (e parte) de um Bloco; ajuda a formá-lo, como
+um todo;
+• Modificador: um estado ou “versão” diferente de um Bloco ou Elemento.
+de front-end, que abarca diversas regras e ferramentas úteis. Tecnicamente,
+trata-se de uma arquitetura baseada em templates DSL construídos
+sobre Node.js (saiba mais a respeito em http://bem.info/) .
+definir uma regra somente uma vez, usando uma classe que faça seus
+efeitos visíveis, do que repetir propriedades e valores em várias diferentes.
+
+
+
+
+SASS
+
+Aninhamento de regras
+Logo no primeiro dia de estudos de HTML, é fácil constatar que se trata de
+uma linguagem que usa elementos aninhados para funcionar: o aninhamento
+confere estrutura e organização hierárquica ao documento. CSS, por sua vez,
+não possui tal característica.
+O poder de Sass começa a se mostrar já aqui: é possível aninhar regras
+CSS para escrever um código mais conciso e menor, conferindo hierarquia
+visual às regras e facilitando da leitura!
+Por exemplo, veja este trecho de CSS:
+nav ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+nav li {
+display: inline-block;
+}
+nav a {
+display: block;
+padding: 6px 12px;
+text-decoration: none;
+}
+Em SCSS, é possível escrever assim:
+nav {
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+
+
+Referência ao ascendente
+Em algumas situações, é preciso fazer referência ao ascendente para se
+montar uma regra apropriadamente. Por exemplo, dentro do aninhamento
+permitido por Sass, como seria para colocar uma regra com :hover?
+Se tentar algo como:
+.selector {
+:hover {
+}
+}
+O CSS compilado será .selector :hover {} (note o espaço), o que
+não é o necessário.
+Para esses casos, Sass provê uma característica muito interessante, tornando
+possível fazer referência ao elemento ascendente imediatamente superior:
+o caractere &.
+Neste exemplo do hover, o código correto seria:
+.selector {
+&:hover {
+}
+}
+
+
+
+Variáveis
+Se o poder dos pré-processadores de CSS limitasse-se somente a permitir o
+uso de variáveis, ainda assim seriam tão famosos e usados como são atualmente!
+Poder usar variáveis é, simplesmente, um incrível avanço na organização
+e manutenibilidade de um conjunto de folhas de estilo!
+Variáveis em Sass são como variáveis em qualquer linguagem de programação:
+referências nominais capazes de armazenar valores que podem ser
+chamadas em trechos de código subsequentes para resgatar e usá-los conforme
+necessário. Para declarar uma variável, basta dar um nome qualquer
+(sem espaços e/ou caracteres especiais) precedido de $, usar : e dar o valor
+que se queira, como em:
+$mainColor: #c0ffee;
+Isso feito, basta usar a variável à vontade! Por exemplo:
+$mainColor: #c0ffee;
+header {
+background-color: $mainColor;
+}
+a {
+color: $mainColor;
+}
+footer .highlight {
+border: 2px solid $mainColor;
+}
+que compilaria:
+header {
+background-color: #c0ffee;
+}
+a {
+color: #c0ffee;
+}
+footer .highlight {
+border: 2px solid #c0ffee;
+}
+A imensa vantagem é poder substituir absolutamente todas as referências
+àquela cor, alterando somente uma linha de código. Mesmo nesse exemplo
+com somente 3 regras, já seria muito bom. Imagine em projetos do mundo
+real, em que não é raro precisar de alterações dessa natureza em dezenas de
+regras!
+
+
+
+
+Interpolação de variáveis
+Sass permite que seja possível interpolar variáveis. Em termos simples,
+seria como juntar o valor de variáveis com outras variáveis ou valores.
+Para se fazer isso, referencia-se a variável usando #{VARIAVEL} e, automaticamente,
+a interpolação acontece. Para ficar mais claro, veja o exemplo:
+$vert: top;
+$horz: left;
+$radius: 5px;
+.rounded-#{$vert}-#{$horz} {
+border-#{$vert}-#{$horz}-radius: $radius;
+}
+
+
+que gera o CSS:
+.rounded-top-left {
+border-top-left-radius: 5px;
+}
+
+
+Mixins
+Mixins permitem que se façamagrupamentos de declarações CSS para serem
+reusados onde se queira. Certamente, sãouma das featuresmais poderosas de
+Sass! Se você já brincou comprogramação, mixins lembrambastante funções.
+Para se trabalhar comeles, o par @mixin/ @include sempre estará presente.
+O primeiro para definir o mixin, em si; o segundo, para indicar em
+qual ponto do código se quer usá-lo.
+Veja este trecho de código Sass com um mixin para arredondamento de
+bordas sendo definido e usado:
+@mixin border-radius($radius) {
+-webkit-border-radius: $radius;
+-moz-border-radius: $radius;
+-ms-border-radius: $radius;
+border-radius: $radius;
+}
+.box {
+@include border-radius(10px);
+}
+
+Isso gerará o seguinte CSS:
+.box {
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+-ms-border-radius: 10px;
+border-radius: 10px;
+
+Com 6 linhas de código, você agora pode arredondar bordas em qualquer
+regra que quiser, apenas usando um @include! Como plus, ainda consegue
+especificar qual será o raio na própria chamada ao mixin!
+}
+
+
+
+
+Extensão/Herança
+Indubitavelmente, Extensão/ Herança é uma das principais características de
+pré-processadores CSS!
+No caso específico de Sass, é possível usar @extend para compartilhar
+uma série de propriedades/valores de várias regras diferentes em umamesma
+regra! Issomantém o código dentro do princípio da não repetição (DRY), faz
+com que seja preciso escrever bem menos código e, de quebra, ainda garante
+que o CSS compilado seja mais lógico e eficiente!
+Como exemplo, suponha que você tenha esta regra:
+.default-box {
+background-color: #efefef;
+border: 1px solid #000;
+color: #333;
+}
+Caso seja preciso criar variações disso com Sass, uma das maneiras possíveis
+seria estendê-la em outra regra! Assim:
+.alert-box {
+@extend .default-box;
+font-size: 2em;
+}
+o que compilaria para:
+.default-box, .alert-box {
+background-color: #efefef;
+border: 1px solid #000;
+color: #333;
+}
+.alert-box {
+font-size: 2em;
+}
+
+
+
+Percebe o poder que isso oferece? Você pode ter um arquivo com definições
+genéricas de regras que podem ser estendidas em quaisquer outras do
+projeto! Por exemplo, regras do tipo:
+[...]
+.bold {
+font-weight: bold;
+}
+.italic {
+font-style: italic;
+}
+.display-block {
+display: block;
+}
+.display-none {
+display: none;
+}
+.underline {
+text-decoration: underline;
+}
+.no-underline {
+text-decoration: none;
+
+
+
+
+Se quiséssemos uma regra para um módulo que precise ter apresentação
+em bloco, negrito e texto justificado, só seria necessário estender regras já
+especificadas anteriormente!
+.my-module {
+@extend .display-block, .bold, .text-justify;
+border: 1px solid #ccc;
+}
+que compilaria para:
+[ ... ]
+.bold, .my-module {
+font-weight: bold;
+}
+.display-block, .my-module {
+display: block;
+}
+.text-justify, .my-module {
+text-align: justify;
+}
+
+
+
+Importação
+Levando em conta o que se aprendeu no capítulo (4) sobre SMACSS e as vantagens
+do Sass ao permitir Extensão/ Herança, não surpreenderia se você já
+tivesse chegado à conclusão de que, em projetos mais profissionais, é preciso
+que se tenha diversos arquivos diferentes, cada um com seu propósito e contendo
+suas respectivas regras de estilo.
+Para essas ocasiões, o Sass oferece um recurso de importação, usando
+@import.
+No exemplo de placeholder selectors mostrado agora há pouco, certamente
+haveria um arquivo Sass com todos eles e, conforme a necessidade e a
+organização do projeto por exemplo, o uso dametodologia SMACSS , a criação
+demais arquivos para conterem as regras devidas. Emuma demonstração
+simples, 2 arquivos:
+Fig. 6.2: Demonstração simples com 2 arquivos
+Logo no início do arquivo style.scss, bastaria colocar:
+@import 'generics';
+Tudo o que está dentro de _generics.scss poderia ser acessado. Não
+é preciso colocar o _ nem .scss na sintaxe de importação. Também é possível
+e, quase sempre, necessário importar vários arquivos, separando-os por
+vírgula na declaração do @import.
+
+
