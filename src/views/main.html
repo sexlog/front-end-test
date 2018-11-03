@@ -21,10 +21,10 @@
 </section>
 
 <ul class="repoBox">
-	<li ng-repeat="name in repos">
+	<li ng-repeat="name in repos | orderBy:'-stargazers_count'">
 		<p>{{name.name}}</p>
 		<p>{{name.description}}</p>
-		<p>{{name.stargazers_count}}</p>
+		<p>{{name.stargazers_count}}</p>	
 		<p>{{name.language}}</p>
 		<a ng-href="{{name.html_url}}" ng-click="showDetailsRepo">{{name.name}}</a>
 	</li>

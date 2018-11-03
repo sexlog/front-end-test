@@ -101,4 +101,9 @@ form input[type="submit"] {
 .bioUser{
     grid-row-start: 2;
     grid-column-start: 2;
+    line-height: 20px;
+}
+
+h2{
+    font-size: 18px;
 }
