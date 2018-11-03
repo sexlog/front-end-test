@@ -4,15 +4,23 @@
 	<input type="submit" ng-click="searchRepo(username)" value="Buscar">
 </form>
 
-<ul class="detailsUser">
-	<li ng-bind="followers"></li>
-	<li ng-bind="following"></li>
-	<li><img ng-src="{{avatar_url}}"></li>
-	<li ng-bind="email"></li>
-	<li ng-bind="bio"></li>
-</ul>
+<section class="userBox">
+	<h2 ng-bind="login"></h2>
+	<img ng-src="{{avatar_url}}">
+	<ul class="userDetails">
+		<li>
+			<span>Seguidores:</span> {{followers}}
+		</li>
+		<li>
+			</span>Seguindo: <span>{{following}}
+		</li>
+	</ul>
+	
+	<p ng-bind="email"></p>
+	<p ng-bind="bio"></p>
+</section>
 
-<ul class="detailsRepo">
+<ul class="repoBox">
 	<li ng-repeat="name in repos">
 		<p>{{name.name}}</p>
 		<p>{{name.description}}</p>

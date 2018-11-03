@@ -28,6 +28,7 @@ angular.module('app')
 				$http.get(detailsUserGithub)
 				.then(
 					function(response){
+						$scope.login = response.data.login;
 						$scope.followers = response.data.followers;
 						$scope.following = response.data.following;
 						$scope.avatar_url = response.data.avatar_url;

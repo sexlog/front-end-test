@@ -1,23 +1,23 @@
 html, body{width: 100%; margin: 0 auto;}
 
-*{text-decoration: none; list-style: none;}
+*{text-decoration: none; list-style: none; border: none;}
 
 .container{
     display: grid;
-    grid-template-columns: 0 2fr 3fr;
+    grid-template-columns: 0 3fr;
     grid-column-gap: 50px;
     background: red;
 }
 
 header{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 3;
 }
 
 .mainBox{
-    grid-template-columns: 0 2fr 3fr;
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-template-columns: 0 3fr;
+    grid-column-start: 2;
+    grid-column-end: 3;
     display: grid;
     background: gray;
 }
@@ -27,14 +27,29 @@ header{
     grid-column-end: 2;
 }
 
-.detailsUser{
+.userBox{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     grid-column-start: 2;
-    grid-column-end: 2;
+    grid-column-end: 3;
     background: yellow;
 }
 
-.detailsRepo{
-    grid-column-start: 3;
+.userBox img{
+    width: 230px;
+    height: 230px;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.userDetails{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background: gray;
+}
+
+.repoBox{
+    grid-column-start: 2;
     grid-column-end: 3;
     background: green;
 }
