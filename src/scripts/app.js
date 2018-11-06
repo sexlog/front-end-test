@@ -12,5 +12,9 @@ angular.module('app', ['ngRoute'])
            .when('/repo', {
                 templateUrl: 'src/views/repo.html',
                 controller: 'RepoController'
+            })
+            .when('/detailsrepo', {
+                templateUrl: 'src/views/detailsrepo.html',
+                controller: 'DetailsRepoController'
             });
     })

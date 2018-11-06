@@ -3,9 +3,9 @@
     angular.module('app')
         .controller('RepoController', RepoController);
         
-        RepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser'];
+        RepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser', 'ServiceDetailsRepo'];
     
-        function RepoController($scope, ServiceRepo, ServiceUser){
+        function RepoController($scope, ServiceRepo, ServiceUser, ServiceDetailsRepo){
             
             
 				var teste = ServiceUser.saveUsername;
@@ -26,5 +26,19 @@
 						$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
 						$scope.propertyName = propertyName;
 					  };
+
+
+					  $scope.showDetailsRepo = function(testando){
+						ServiceDetailsRepo.query(testando)
+						.then(
+							function(response){
+								$scope.detailsrepo = response.data;
+								console.log($scope.detailsrepo);
+							},
+							function(err){
+								console.log("não encontrado!");
+							}
+						);
+					}
         }
     })();
