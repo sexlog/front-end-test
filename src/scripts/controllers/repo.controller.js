@@ -3,14 +3,15 @@
     angular.module('app')
         .controller('RepoController', RepoController);
         
-        RepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser', 'ServiceDetailsRepo'];
+        RepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser', 'ServiceDetailsRepo', '$location'];
     
-        function RepoController($scope, ServiceRepo, ServiceUser, ServiceDetailsRepo){
+        function RepoController($scope, ServiceRepo, ServiceUser, ServiceDetailsRepo, $location){
             
-            
-				var teste = ServiceUser.saveUsername;
+				var readUsername = ServiceUser.saveUsername;
+				$scope.propertyName = 'stargazers_count';
+				$scope.reverse = true;
 
-				ServiceRepo.query(teste)
+				ServiceRepo.query(readUsername)
 					.then(
 						function(response){
 							$scope.repo = response.data;
@@ -20,25 +21,23 @@
 						}
 					);
 
-					$scope.propertyName = 'stargazers_count';
-					$scope.reverse = true;
-					$scope.sortBy = function(propertyName) {
-						$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
-						$scope.propertyName = propertyName;
-					  };
+				$scope.sortBy = function(propertyName) {
+					$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+					$scope.propertyName = propertyName;
+				};
 
-
-					  $scope.showDetailsRepo = function(nameRepo){
-						ServiceDetailsRepo.query(nameRepo)
+				$scope.showDetailsRepo = function(nameRepo){
+					ServiceDetailsRepo.query(nameRepo)
 						.then(
 							function(response){
 								$scope.detailsrepo = response.data;
-								console.log($scope.detailsrepo);
+								ServiceDetailsRepo.detailsRepo = $scope.detailsrepo;
+								$location.path('/detailsrepo');
 							},
 							function(err){
 								console.log("não encontrado!");
 							}
 						);
-					}
+				}
         }
     })();

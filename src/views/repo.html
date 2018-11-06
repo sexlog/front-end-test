@@ -5,9 +5,7 @@
 
 <ul class="repoBox">
 	<li ng-repeat="repos in repo | orderBy:propertyName:reverse">
-		<a ng-href=""  ng-click="showDetailsRepo(repos.name)">
-			<h3>{{repos.name}}</h3>
-		</a>
+		<h3 ng-click="showDetailsRepo(repos.name)">{{repos.name}}</h3>
 		<p>{{repos.description}}</p>
 		<h4>✰ {{repos.stargazers_count}}</h4>
 	</li>

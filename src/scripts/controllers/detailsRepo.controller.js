@@ -3,10 +3,10 @@
     angular.module('app')
         .controller('DetailsRepoController', DetailsRepoController);
         
-        DetailsRepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser'];
-    
-        function DetailsRepoController($scope, ServiceRepo, ServiceUser){
-
-            var saveUsername = ServiceUser.saveUsername;
+        DetailsRepoController.$inject = ['$scope', 'ServiceDetailsRepo'];
+        
+        function DetailsRepoController($scope, ServiceDetailsRepo){
+            $scope.detailsrepo = ServiceDetailsRepo.detailsRepo;
+            console.log(ServiceDetailsRepo.detailsRepo);
         }
     })();

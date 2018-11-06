@@ -1,11 +1,10 @@
 {
   "name": "front-end-test",
   "version": "1.0.0",
-  "description": "Project Consult API Github's using Angular and React",
+  "description": "Project Consult API Github's using Angular",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -a localhost -p 9090",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server -a localhost -p 9090"
   },
   "repository": {
     "type": "git",
@@ -13,8 +12,8 @@
   },
   "keywords": [
     "Angular;",
-    "React;",
-    "Node;"
+    "Node;",
+    "Grid CSS"
   ],
   "author": "DenisdS <denis_santos1989@hotmail.com>",
   "license": "MIT",

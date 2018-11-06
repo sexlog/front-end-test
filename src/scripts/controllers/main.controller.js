@@ -3,11 +3,11 @@
     angular.module('app')
         .controller('MainController', MainController);
         
-        MainController.$inject = ['$scope', 'ServiceUser', '$location'];
+        MainController.$inject = ['$scope', 'ServiceUser'];
     
-        function MainController($scope, ServiceUser, $location){
+        function MainController($scope, ServiceUser){
             
-            $scope.searchRepo = function(username){
+            $scope.searchUser = function(username){
 				ServiceUser.saveUsername = $scope.username;
 
 				ServiceUser.query(username)
