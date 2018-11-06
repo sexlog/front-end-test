@@ -28,8 +28,8 @@
 					  };
 
 
-					  $scope.showDetailsRepo = function(testando){
-						ServiceDetailsRepo.query(testando)
+					  $scope.showDetailsRepo = function(nameRepo){
+						ServiceDetailsRepo.query(nameRepo)
 						.then(
 							function(response){
 								$scope.detailsrepo = response.data;

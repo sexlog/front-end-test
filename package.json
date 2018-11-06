@@ -23,12 +23,9 @@
   },
   "homepage": "https://github.com/DenisdS/front-end-test#readme",
   "dependencies": {
-    "jquery": "",	 
-    "angular": "1.6",	
-    "angular-route": "^1.6",	
-	  "angular-sanitize": "1.6",	
-	  "angular-resource": "^1.6",	
-    "angular-localstorage": "",
-    "http-server": ""
+    "angular": "1.6",
+    "angular-route": "^1.6",
+    "http-server": "",
+    "jquery": ""
   }
 }
