@@ -33,7 +33,7 @@ label{font-weight: bold;}
 }
 
 /*Style elements form*/
-form input[type="submit"] {
+form input[type="submit"] , .choiceOrderRepo{
     width: 80px;
     height: 42px;
     background: #214478;
@@ -54,6 +54,16 @@ form input[type="text"] {
     border-radius: 5px;
 }
 /*End style elements form*/
+
+.sortOrder:after {
+    content: '\25b2';
+    color: #fff;
+}
+
+.sortOrder.reverse:after {
+    content: '\25bc';
+    color: #fff;
+ }
 
 @media (max-width: 799px) {
     .container{
@@ -199,12 +209,16 @@ form input[type="text"] {
         grid-column-start: 1;
     }
     
-    .repoBox{
-        grid-column-start: 3;
-        grid-column-end: 3;
+    .choiceOrderRepo, .sortOrder{
         grid-row-start: 2;
+    }
+
+    .repoBox{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
     }
