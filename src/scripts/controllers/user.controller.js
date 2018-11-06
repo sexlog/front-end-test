@@ -6,6 +6,6 @@
         UserController.$inject = ['$scope', 'ServiceUser', '$location'];
     
         function UserController($scope, ServiceUser, $location){
-            console.log($scope.user = ServiceUser.detailsUser);
+            $scope.user = ServiceUser.detailsUser;
         }
     })();

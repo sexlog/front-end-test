@@ -5,7 +5,8 @@
 			
 		ServiceUser.$inject = ['$http'];
 			
-		const testando = "";
+		const detailsUser = "";
+		const saveUsername = "";
 		
 		function ServiceUser($http){
 			this.query = function ServiceUser(username){

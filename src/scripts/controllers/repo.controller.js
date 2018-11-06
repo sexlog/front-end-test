@@ -3,21 +3,21 @@
     angular.module('app')
         .controller('RepoController', RepoController);
         
-        RepoController.$inject = ['$scope', 'SeriveRepo'];
+        RepoController.$inject = ['$scope', 'ServiceRepo', 'ServiceUser'];
     
-        function RepoController($scope, SeriveRepo){
+        function RepoController($scope, ServiceRepo, ServiceUser){
             
-            $scope.searchRepo = function(username){
-                var checkRepos = 0;
-				SeriveRepo.get(username)
+            
+				var teste = ServiceUser.saveUsername;
+
+				ServiceRepo.query(teste)
 					.then(
 						function(response){
-                            $scope.repos = response.data;
+							$scope.repo = response.data;
 						},
 						function(err){
 							console.log("não encontrado!");
 						}
-                    );                    
-			}
+					);
         }
     })();
