@@ -7,5 +7,5 @@ angular.module('app', [
                 templateUrl: 'src/views/main.html',
                 controller: 'MainController',
                 controllerAs: 'main'
-            });
+            })
     })
