@@ -1,5 +1,5 @@
 angular.module('app', [
-        'ngRoute', 'ngSanitize' 
+        'ngRoute', 'ngResource', 'ngLocalStorage'
     ])
     .config(function($routeProvider){
         $routeProvider
@@ -8,4 +8,9 @@ angular.module('app', [
                 controller: 'MainController',
                 controllerAs: 'main'
             })
+           .when('/repo', {
+                templateUrl: 'src/views/repo.html',
+                controller: 'RepoController',
+                controllerAs: 'repo'
+            });
     })
