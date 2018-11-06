@@ -11,6 +11,10 @@ header h1 a{
 
 h2{font-size: 24px;}
 
+h2.resultUser{
+    grid-column-start: 2;
+}
+
 h3{font-size: 16px;}
 
 h4, p{font-size: 14px;}

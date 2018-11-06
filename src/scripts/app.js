@@ -5,12 +5,14 @@ angular.module('app', [
         $routeProvider
             .when('/', {
                 templateUrl: 'src/views/main.html',
-                controller: 'MainController',
-                controllerAs: 'main'
+                controller: 'MainController'
+            })
+            .when('/teste', {
+                templateUrl: 'src/views/user.html',
+                controller: 'UserController'
             })
            .when('/repo', {
                 templateUrl: 'src/views/repo.html',
-                controller: 'RepoController',
-                controllerAs: 'repo'
+                controller: 'RepoController'
             });
     })
