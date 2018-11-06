@@ -14,7 +14,6 @@
 							$scope.user = response.data;
 
 							ServiceUser.detailsUser = $scope.user;
-							$location.path('/teste');
 						},
 						function(err){
 							console.log("não encontrado!");

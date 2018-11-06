@@ -4,23 +4,7 @@
 	<input type="submit" ng-click="searchRepo(username)" value="Buscar">
 </form>
 
-<a ng-href="/teste" class="resultUser" ng-click="showDetailsUser">{{login}}</a>
-
-<section class="userBox" ng-repeat="testando in user">
-	<h2 ng-bind="user.login"></h2>
-	<img ng-src="{{user.avatar_url}}">
-	<ul class="userDetails">
-		<li>
-			<span>Seguidores:</span> {{user.followers}}
-		</li>
-		<li>
-			<span>Seguindo:</span> {{user.following}}
-		</li>
-	</ul>
-	
-	<p ng-bind="user.email" class="emailContact"></p>
-	<p ng-bind="user.bio" class="bioUser"></p>
-</section>
+<a ng-href="#!user" class="resultUser">{{user.login}}</a>
 
 <!--ul class="repoBox">
 	<li ng-repeat="name in repos | orderBy:'-stargazers_count'">

@@ -1,13 +1,11 @@
-angular.module('app', [
-        'ngRoute', 'ngResource', 'ngLocalStorage'
-    ])
+angular.module('app', ['ngRoute'])
     .config(function($routeProvider){
         $routeProvider
             .when('/', {
                 templateUrl: 'src/views/main.html',
                 controller: 'MainController'
             })
-            .when('/teste', {
+            .when('/user', {
                 templateUrl: 'src/views/user.html',
                 controller: 'UserController'
             })

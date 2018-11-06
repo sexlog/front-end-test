@@ -11,7 +11,7 @@ header h1 a{
 
 h2{font-size: 24px;}
 
-h2.resultUser{
+a.resultUser{
     grid-column-start: 2;
 }
 
@@ -80,7 +80,7 @@ form input[type="text"] {
     .userBox{
         display: grid;
         grid-template-columns: 0.7fr 1fr;
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-row-start: 2;
         border-bottom: 2px #214478 solid;
         border-radius: 15px;
@@ -173,7 +173,7 @@ form input[type="text"] {
         grid-column-start: 2;
         grid-column-end: 2;
         grid-column-gap: 32px;
-        grid-row-start: 2;
+        grid-row-start: 1;
         grid-template-rows: 64px 184px;
         border-top: 2px #214478 solid;
         border-radius: 15px;
