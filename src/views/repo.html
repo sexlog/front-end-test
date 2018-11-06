@@ -1,9 +1,11 @@
 <ul class="repoBox">
-	<li ng-repeat="repos in repo | orderBy:'-stargazers_count'">
+	<li ng-repeat="repos in repo | orderBy:propertyName:reverse">
 		<h3>{{repos.name}}</h3>
 		<p>{{repos.description}}</p>
 		<h4>✰ {{repos.stargazers_count}}</h4>	
 		<p class="languageRepo">[ {{repos.language}} ]</p>
-		<a ng-href="{{repo.html_url}}" ng-click="showDetailsRepo">{{repos.name}}</a>
+		<a ng-href="{{repos.html_url}}" target="_blank">{{repos.name}}</a>
 	</li>
 </ul>
+
+<button ng-click="sortBy('stargazers_count')">Teste</button>

@@ -19,5 +19,12 @@
 							console.log("não encontrado!");
 						}
 					);
+
+					$scope.propertyName = 'stargazers_count';
+					$scope.reverse = true;
+					$scope.sortBy = function(propertyName) {
+						$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+						$scope.propertyName = propertyName;
+					  };
         }
     })();
