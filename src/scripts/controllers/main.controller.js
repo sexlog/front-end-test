@@ -15,9 +15,10 @@
 						function(response){
 							$scope.user = response.data;
 							ServiceUser.detailsUser = $scope.user;
+							$scope.userErr = "";
 						},
 						function(err){
-							console.log("não encontrado!");
+							$scope.userErr = "Não encontrado!";
 						}
 					);
 			}

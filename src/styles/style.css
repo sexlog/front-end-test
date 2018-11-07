@@ -1,5 +1,5 @@
 /*Global style*/
-html, body{width: 100%; margin: 0 auto; font-family: Helvetica; overflow: auto;}
+html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
 
 *{text-decoration: none; list-style: none; border: none;}
 /*End global style*/
@@ -16,6 +16,13 @@ h3{font-size: 16px;}
 .repoBox h3{
     color:#0645AD;
     cursor: pointer;
+}
+
+.errorSearch{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 18px;
+    color: red;
 }
 
 h4, p{font-size: 14px;}
@@ -67,7 +74,7 @@ form input[type="text"] {
  }
 
 @media (max-width: 799px) {
-    h1{
+    h1, h2{
         text-align: center;
     }
 
@@ -135,6 +142,17 @@ form input[type="text"] {
         grid-column-gap: 10px;
         grid-row-gap: 10px;
     }
+
+    .choiceOrderRepo{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 2;
+    }
+
+    .sortOrder{
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
     
     .repoBox li{
         background: #A9E2F3;
@@ -169,7 +187,7 @@ form input[type="text"] {
         grid-template-columns: 0 3fr 3fr;
         grid-column-start: 2;
         grid-column-end: 2;
-        grid-template-rows: 100px;
+        grid-template-rows: 40px;
         display: grid;
     }
     
@@ -180,6 +198,7 @@ form input[type="text"] {
 
     a.resultUser{
         grid-column-start: 2;
+        grid-row-start: 3;
     }
     
     .userBox{
@@ -215,17 +234,31 @@ form input[type="text"] {
     }
     
     .choiceOrderRepo, .sortOrder{
-        grid-row-start: 2;
+        grid-row-start: 3;
     }
 
     .repoBox{
         grid-column-start: 2;
         grid-column-end: 4;
-        grid-row-start: 3;
+        grid-row-start: 4;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-column-gap: 10px;
         grid-row-gap: 10px;
+    }
+
+    .titleRepo{
+        grid-row-start: 2;
+    }
+
+    .goRepo{
+        grid-row-start: 3;
+    }
+
+    .detailsRepoBox{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 5;
     }
     
     .repoBox li{

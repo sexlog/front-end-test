@@ -8,6 +8,7 @@
         function RepoController($scope, ServiceRepo, ServiceUser, ServiceDetailsRepo, $location){
             
 				var readUsername = ServiceUser.saveUsername;
+				$scope.usergithub = readUsername;
 				$scope.propertyName = 'stargazers_count';
 				$scope.reverse = true;
 
