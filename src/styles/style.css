@@ -1,7 +1,7 @@
 /*Global style*/
-html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
+html, body{width: 100%; margin: 0 auto; font-family: Helvetica, sans-serif;}
 
-*{text-decoration: none; list-style: none; border: none;}
+*{text-decoration: none; list-style: none; border: none; font-family: Helvetica}
 /*End global style*/
 
 /*Style text*/
