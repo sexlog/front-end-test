@@ -46,6 +46,10 @@ O desenvolvimento priorizou a construção de serviços que possam ser utilizado
 
 4. 1. detailsRepo.service: Solicita a API informações detalhadas de um repositório especifico. Este se comunica com user.service para minimizar consultas e reutilizar serviços.
 
+## Suporte:
+
+O projeto foi testado nos navegadores chrome e firefox, também foram testadas diferentes resoluções.
+
 ## Instruções de Execução:
 
 1. É necessário instalar as dependências do projeto, para isso basta ter o Node e NPM instalados na máquina e executar o comando npm install na pasta raiz.
