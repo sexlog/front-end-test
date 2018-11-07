@@ -1,5 +1,5 @@
 /*Global style*/
-html, body{width: 100%; margin: 0 auto; font-family: Helvetica;}
+html, body{width: 100%; margin: 0 auto; font-family: Helvetica; overflow: auto;}
 
 *{text-decoration: none; list-style: none; border: none;}
 /*End global style*/
@@ -16,6 +16,11 @@ a.resultUser{
 }
 
 h3{font-size: 16px;}
+
+.repoBox h3{
+    color:#0645AD;
+    cursor: pointer;
+}
 
 h4, p{font-size: 14px;}
 
@@ -44,7 +49,7 @@ form input[type="submit"] , .choiceOrderRepo{
 }
 
 form input[type="text"] {
-    width: 230px;
+    width: 218px;
     height: 35px;
     background: #e6eff8;
     grid-row-start: 1;
@@ -66,10 +71,13 @@ form input[type="text"] {
  }
 
 @media (max-width: 799px) {
+    h1{
+        text-align: center;
+    }
+
     .container{
         display: grid;
-        grid-template-columns: 0 1fr 0;
-        grid-column-gap: 2%;
+        grid-template-columns: 1fr;
     }
 
     header{
@@ -77,35 +85,39 @@ form input[type="text"] {
     }
 
     .mainBox{
-        grid-template-columns: 0 1fr;
+        grid-template-columns: 1fr;
         grid-column-start: 2;
         display: grid;
+    }
+
+    a.resultUser{
+        grid-row-start: 3;
     }
 
     .formSearchUser{
         grid-column-start: 2;
-        grid-row-start: 1;
     }
 
     .userBox{
         display: grid;
-        grid-template-columns: 0.7fr 1fr;
+        grid-template-columns: 1fr;
         grid-column-start: 1;
-        grid-row-start: 2;
+        justify-items: center;
+        grid-row-start: 1;
         border-bottom: 2px #214478 solid;
         border-radius: 15px;
     }
 
-    .userBox h2{
-        grid-row-start: 1;
+    .showRepo{
+        grid-row-start: 6;
+        grid-column-start: 1;
     }
 
     .userDetails{
         display: inline-grid;
         grid-template-columns: 1fr 1fr;
         grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row-start: 2;
+        justify-items: center;
         border-right: 2px #214478 solid;
         border-bottom: 4px #214478 solid;
         border-left: 2px #214478 solid;
@@ -114,10 +126,6 @@ form input[type="text"] {
     .userBox img{
         grid-column-start: 1;
         grid-row-start: 3;
-    }
-
-    .userDetails li{
-        grid-column-start: 1;
     }
 
     .bioUser{
@@ -234,5 +242,14 @@ form input[type="text"] {
         grid-row-start: 2;
         grid-column-start: 2;
         line-height: 20px;
+    }
+
+    .showRepo{
+        grid-row-start: 3;
+        grid-column-start: 2;
+        border-left: 2px #214478 solid;
+        border-bottom: 2px #214478 solid;
+        text-indent: 20px;
+        padding-top: 13px;
     }
 }
