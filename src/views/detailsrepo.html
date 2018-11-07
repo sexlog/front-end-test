@@ -1,0 +1,14 @@
+<a ng-href="#!user">{{usergithub}}</a>
+<a ng-href="#!repo" class="goRepo">Repositórios</a>
+
+<ul class="repoBox">
+	<li>
+        <a ng-href="{{detailsrepo.repos.html_url}}" target="_blank">
+            <h2>{{detailsrepo.name}}</h2>
+        </a>
+            
+        <p>{{detailsrepo.description}}</p>
+        <h4>✰ {{detailsrepo.stargazers_count}}</h4>	
+        <p class="languageRepo">[ {{detailsrepo.language}} ]</p>
+    </li>
+</ul>

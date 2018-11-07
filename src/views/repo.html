@@ -1,0 +1,14 @@
+<a ng-href="#!user">{{usergithub}}</a>
+
+<h2 class="titleRepo">Repositórios</h2>
+
+<button ng-click="sortBy('stargazers_count')" class="choiceOrderRepo">Stars</button>
+<span class="sortOrder reverse" ng-show="propertyName === 'stargazers_count'" ng-class="{reverse: reverse}"></span>
+
+<ul class="repoBox">
+	<li ng-repeat="repos in repo | orderBy:propertyName:reverse">
+		<h3 ng-click="showDetailsRepo(repos.name)">{{repos.name}}</h3>
+		<p>{{repos.description}}</p>
+		<h4>✰ {{repos.stargazers_count}}</h4>
+	</li>
+</ul>

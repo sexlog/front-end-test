@@ -1,0 +1,294 @@
+/*Global style*/
+html, body{width: 100%; margin: 0 auto; font-family: Helvetica, sans-serif;}
+
+*{text-decoration: none; list-style: none; border: none; font-family: Helvetica}
+/*End global style*/
+
+/*Style text*/
+header h1 a{
+    color: #DF0101;
+}
+
+h2{font-size: 24px;}
+
+h3{font-size: 16px;}
+
+.repoBox h3{
+    color:#0645AD;
+    cursor: pointer;
+}
+
+.errorSearch{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 18px;
+    color: red;
+}
+
+h4, p{font-size: 14px;}
+
+li span{font-weight: bold;}
+
+label{font-weight: bold;}
+
+.languageRepo{font-weight: bold;}
+/*End style text*/
+
+.userBox img{
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+}
+
+/*Style elements form*/
+form input[type="submit"] , .choiceOrderRepo{
+    width: 80px;
+    height: 42px;
+    background: #214478;
+    font: 18px Helvetica;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+form input[type="text"] {
+    width: 218px;
+    height: 35px;
+    background: #e6eff8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    border-bottom: 2px #214478 solid;
+    border-left: 2px #214478 solid;
+    border-radius: 5px;
+}
+/*End style elements form*/
+
+.sortOrder:after {
+    content: '\25b2';
+    color: #fff;
+}
+
+.sortOrder.reverse:after {
+    content: '\25bc';
+    color: #fff;
+ }
+
+@media (max-width: 799px) {
+    h1, h2{
+        text-align: center;
+    }
+
+    h2{
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .mainBox{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        display: grid;
+    }
+
+    a.resultUser{
+        grid-row-start: 3;
+    }
+
+    .userBox{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-start: 1;
+        justify-items: center;
+        grid-row-start: 1;
+        border-bottom: 2px #214478 solid;
+        border-radius: 15px;
+    }
+
+    .showRepo{
+        grid-row-start: 6;
+        grid-column-start: 1;
+    }
+
+    .userDetails{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-start: 1;
+        justify-items: center;
+        border-right: 2px #214478 solid;
+        border-bottom: 4px #214478 solid;
+        border-left: 2px #214478 solid;
+    }
+
+    .userBox img{
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .bioUser{
+        grid-column-start: 1;
+        line-height: 20px;
+    }
+
+    .repoBox{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .choiceOrderRepo{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 3;
+    }
+
+    .sortOrder{
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .goRepo{
+        grid-column-start: 1;
+    }
+    
+    .repoBox li{
+        background: #A9E2F3;
+        border-radius: 7px;
+        justify-items: center;
+        display: grid;
+    }
+
+    p{
+        padding-left: 10px;
+    }
+
+    .emailContact{
+        grid-row-start: 4;
+    }
+}
+
+@media (min-width: 800px) {
+    .container{
+        display: grid;
+        grid-template-columns: 0 3fr;
+        grid-column-gap: 50px;
+        grid-template-rows: 84px;
+    }
+    
+    header{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    
+    .mainBox{
+        grid-template-columns: 0 3fr 3fr;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-template-rows: 40px;
+        display: grid;
+    }
+    
+    .formSearchUser{
+        grid-column-start: 2;
+        grid-column-end: 2;
+    }
+
+    a.resultUser{
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+    
+    .userBox{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-column-gap: 32px;
+        grid-row-start: 1;
+        grid-template-rows: 64px 184px;
+        border-top: 2px #214478 solid;
+        border-radius: 15px;
+    }
+    
+    .userBox img{
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    
+    .userDetails{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        border-right: 2px #214478 solid;
+        border-bottom: 4px #214478 solid;
+        border-left: 2px #214478 solid;
+    }
+    
+    .emailContact{
+        grid-column-start: 1;
+    }
+    
+    .choiceOrderRepo, .sortOrder{
+        grid-row-start: 3;
+    }
+
+    .repoBox{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .titleRepo{
+        grid-row-start: 2;
+    }
+
+    .goRepo{
+        grid-row-start: 3;
+    }
+
+    .detailsRepoBox{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 5;
+    }
+    
+    .repoBox li{
+        background: #A9E2F3;
+        border-radius: 7px;
+        justify-items: center;
+        display: grid;
+    }
+    
+    .bioUser{
+        grid-row-start: 2;
+        grid-column-start: 2;
+        line-height: 20px;
+    }
+
+    .showRepo{
+        grid-row-start: 3;
+        grid-column-start: 2;
+        border-left: 2px #214478 solid;
+        border-bottom: 2px #214478 solid;
+        text-indent: 20px;
+        padding-top: 13px;
+    }
+}

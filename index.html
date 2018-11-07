@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1">
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+
+		<link rel="stylesheet" href="src/styles/style.css">
+
+        <title>Consult API Github</title>
+    </head>
+	
+    <body class="container">
+		<header>
+			<h1>
+				<a href="index.html">
+					{Search Github}
+				</a>
+			</h1>
+		</header>
+	
+		<div ng-app="app" ng-view="" class="mainBox">
+		</div>
+		
+        <script src="src/scripts/app.js"></script>
+        
+        <script src="src/scripts/controllers/main.controller.js"></script>
+        <script src="src/scripts/controllers/repo.controller.js"></script>
+        <script src="src/scripts/controllers/user.controller.js"></script>
+        <script src="src/scripts/controllers/detailsRepo.controller.js"></script>
+
+        <script src="src/scripts/services/user.service.js"></script>
+        <script src="src/scripts/services/repo.service.js"></script>
+        <script src="src/scripts/services/detailsRepo.service.js"></script>
+    </body>
+</html>

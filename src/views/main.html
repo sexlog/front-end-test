@@ -1,0 +1,9 @@
+<form class="formSearchUser">
+	<label for="busca">Buscar Usuário do Github</label><br>
+	<input type="text" id="busca" ng-model="username">
+	<input type="submit" ng-click="searchUser(username)" value="Buscar">
+</form>
+
+<a ng-href="#!user" class="resultUser">{{user.login}}</a>
+
+<p ng-bind="userErr" class="errorSearch"></p>
