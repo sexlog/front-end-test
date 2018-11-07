@@ -7,6 +7,5 @@
         
         function DetailsRepoController($scope, ServiceDetailsRepo){
             $scope.detailsrepo = ServiceDetailsRepo.detailsRepo;
-            console.log(ServiceDetailsRepo.detailsRepo);
         }
     })();
