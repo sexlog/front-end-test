@@ -19,6 +19,7 @@
 						},
 						function(err){
 							$scope.userErr = "Não encontrado!";
+							$scope.user = "";
 						}
 					);
 			}
