@@ -11,10 +11,6 @@ header h1 a{
 
 h2{font-size: 24px;}
 
-a.resultUser{
-    grid-column-start: 2;
-}
-
 h3{font-size: 16px;}
 
 .repoBox h3{
@@ -81,21 +77,18 @@ form input[type="text"] {
     }
 
     header{
-        grid-column-start: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
     }
 
     .mainBox{
         grid-template-columns: 1fr;
-        grid-column-start: 2;
+        justify-items: center;
         display: grid;
     }
 
     a.resultUser{
         grid-row-start: 3;
-    }
-
-    .formSearchUser{
-        grid-column-start: 2;
     }
 
     .userBox{
@@ -183,6 +176,10 @@ form input[type="text"] {
     .formSearchUser{
         grid-column-start: 2;
         grid-column-end: 2;
+    }
+
+    a.resultUser{
+        grid-column-start: 2;
     }
     
     .userBox{
